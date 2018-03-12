@@ -127,4 +127,4 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_URL = '/media/'
-MEDIA_REPOSITORY = ''
+MEDIA_REPOSITORY = '/media_repo'

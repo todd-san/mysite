@@ -40,7 +40,7 @@ class Banner(models.Model):
 
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200, default=None)
-    post = models.ForeignKey(Post, to_field='id')
+    post = models.ForeignKey(Post, to_field='id', on_delete=models.CASCADE)
     image = models.ImageField('image', upload_to=os.path.join(MEDIA_ROOT, BANNER_FOLDER))
 
     @property

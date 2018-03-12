@@ -1,0 +1,183 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block title_outer %}
+        <title>{% block title %}{{ site.name }}{% endblock %}</title>
+    {% endblock %}
+
+    {% block meta %}
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
+    {% endblock %}
+
+    {% block stylesheets %}
+      <link href="{% static 'blog/css/bootstrap/bootstrap.min.css' %}" rel="stylesheet">
+      <!-- Custom styles for this template --><link href="css/blog-home.css" rel="stylesheet">
+      <link href="{% static 'blog/css/blog-home.css' %}" rel="stylesheet">
+    {% endblock %}
+  </head>
+
+  <body {% block ng_app %}{% endblock %} {% block background_img %}{% endblock %}>
+    {% block body %}
+
+        <!-- Navigation -->
+        {% block navigation %}
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+          <div class="container">
+            <a class="navbar-brand" href="#">Start Bootstrap</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home
+                    <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        {% endblock navigation %}
+
+        {% block content %}
+        <!-- Page Content -->
+        <div class="container">
+          <div class="row">
+            <!-- Blog Entries Column -->
+            {% block blog_entries_col %}
+            <div class="col-md-8">
+
+              <!-- Custom code for Blog Entries (Not yet usable)-->
+              {% block page_heading %}
+              <h1 class="my-4">Page Heading
+                <small>Secondary Text</small>
+              </h1>
+              {% endblock page_heading %}
+
+              {% block posts %}
+              <div class="card mb-4">
+                <img class="card-img-top" src="http://placehold.it/750x200" alt="Card image cap">
+                <div class="card-body">
+                  <h2 class="card-title">Post Title</h2>
+                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+                  <a href="#" class="btn btn-primary">Read More &rarr;</a>
+                </div>
+                <div class="card-footer text-muted">
+                  Posted on January 1, 2017 by
+                  <a href="#">Start Bootstrap</a>
+                </div>
+              </div>
+              {% endblock posts %}
+
+              {% block pagination %} {% endblock %}
+
+            </div>
+            {% endblock blog_entries_col %}
+
+            <!-- Sidebar Widgets Column -->
+            {% block sidebar_widgets_col %}
+            <div class="col-md-4">
+
+              <!-- Search Widget -->
+              {% block search_widget %}
+              <div class="card my-4">
+                <h5 class="card-header">Search</h5>
+                <div class="card-body">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-secondary" type="button">Go!</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              {% endblock search_widget %}
+
+              <!-- Categories Widget -->
+              {% block categories_widget %}
+              <div class="card my-4">
+                <h5 class="card-header">Categories</h5>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <ul class="list-unstyled mb-0">
+                        <li>
+                          <a href="#">Web Design</a>
+                        </li>
+                        <li>
+                          <a href="#">HTML</a>
+                        </li>
+                        <li>
+                          <a href="#">Freebies</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-lg-6">
+                      <ul class="list-unstyled mb-0">
+                        <li>
+                          <a href="#">JavaScript</a>
+                        </li>
+                        <li>
+                          <a href="#">CSS</a>
+                        </li>
+                        <li>
+                          <a href="#">Tutorials</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endblock categories_widget %}
+
+              <!-- Side Widget -->
+              {% block side_widget %}
+              <div class="card my-4">
+                <h5 class="card-header">Side Widget</h5>
+                <div class="card-body">
+                  You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+                </div>
+              </div>
+              {% endblock side_widget %}
+
+            </div>
+            {% endblock sidebar_widgets_col %}
+          </div>
+          <!-- /.row -->
+
+        </div>
+        <!-- /.container -->
+        {% endblock content %}
+
+        <!-- Footer -->
+        {% block footer %}
+        <footer class="py-5 bg-dark">
+          <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+          </div>
+        </footer>
+        {% endblock footer %}
+
+        <!-- Bootstrap core JavaScript -->
+        {% block javascript %}
+        <script src="{% static 'blog/js/bootstrap/bootstrap.js' %}"></script>
+        <script src="{% static 'blog/js/bootstrap/bootstrap.bundle.min.js' %}"></script>
+        {% endblock javascript %}
+    {% endblock body %}
+  </body>
+
+</html>
