@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Banner
+from .models import Post
 
 # Register your models here.
 
@@ -7,8 +7,3 @@ from .models import Post, Banner
 @admin.register(Post)
 class Post(admin.ModelAdmin):
     list_display = ['id', 'title']
-
-
-@admin.register(Banner)
-class TreadImageAdmin(admin.ModelAdmin):
-    list_display = ['name']

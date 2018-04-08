@@ -15,42 +15,83 @@
 
     {% block stylesheets %}
       <link href="{% static 'blog/css/bootstrap/bootstrap.min.css' %}" rel="stylesheet">
-      <!-- Custom styles for this template --><link href="css/blog-home.css" rel="stylesheet">
+{#      <!-- Custom styles for this template --><link href="blog/css/blog-home.css" rel="stylesheet">#}
       <link href="{% static 'blog/css/blog-home.css' %}" rel="stylesheet">
     {% endblock %}
   </head>
 
-  <body {% block ng_app %}{% endblock %} {% block background_img %}{% endblock %}>
+  <body {% block ng_app %}{% endblock %} {% block background_img %}
+      background="{% static 'blog/imgs/psychedelic-skull-wallpaper.png' %}"
+  {% endblock %}>
     {% block body %}
 
         <!-- Navigation -->
         {% block navigation %}
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-          <div class="container">
-            <a class="navbar-brand" href="#">Start Bootstrap</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Home
-                    <span class="sr-only">(current)</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Services</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Contact</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
+       style="background-image: url({% static 'blog/imgs/banner.png' %})">
+  <div class="container">
+    <a class="navbar-brand" href="#"><span style="color: #85a6d6">toddsan.com:</span> <small>A blog page for some old and new projects.</small></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+        <li class="dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Login</a>
+          <ul id="login-dp" class="dropdown-menu">
+            <li>
+              <div class="row">
+                <div class="col-md-12"> Login via
+                  <div class="social-buttons">
+                        <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+                        <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+                    </div>
+                  or
+                  <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                      <div class="form-group">
+                        <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                      </div>
+                      <div class="form-group">
+                        <label class="sr-only" for="exampleInputPassword2">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                        <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+                      </div>
+                        <div class="form-group">
+                          <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                        </div>
+                        <div class="checkbox">
+                          <label>
+                            <input type="checkbox"> keep me logged-in
+                          </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="bottom text-center">
+                    New here ? <a href="#"><b>Join Us</b></a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
         {% endblock navigation %}
 
         {% block content %}
@@ -58,7 +99,6 @@
         <div class="container">
           <div class="row">
             <!-- Blog Entries Column -->
-            {% block blog_entries_col %}
             <div class="col-md-8">
 
               <!-- Custom code for Blog Entries (Not yet usable)-->
@@ -67,8 +107,6 @@
                 <small>Secondary Text</small>
               </h1>
               {% endblock page_heading %}
-
-              {% block posts %}
               <div class="card mb-4">
                 <img class="card-img-top" src="http://placehold.it/750x200" alt="Card image cap">
                 <div class="card-body">
@@ -81,17 +119,11 @@
                   <a href="#">Start Bootstrap</a>
                 </div>
               </div>
-              {% endblock posts %}
-
-              {% block pagination %} {% endblock %}
-
             </div>
-            {% endblock blog_entries_col %}
+
 
             <!-- Sidebar Widgets Column -->
-            {% block sidebar_widgets_col %}
             <div class="col-md-4">
-
               <!-- Search Widget -->
               {% block search_widget %}
               <div class="card my-4">
@@ -153,19 +185,16 @@
                 </div>
               </div>
               {% endblock side_widget %}
-
             </div>
-            {% endblock sidebar_widgets_col %}
           </div>
-          <!-- /.row -->
-
         </div>
         <!-- /.container -->
         {% endblock content %}
+{#        {% block ui-templates %}{% endblock ui-templates %}#}
 
         <!-- Footer -->
         {% block footer %}
-        <footer class="py-5 bg-dark">
+        <footer class="py-5 bg-dark" style="background-image: url({% static 'blog/imgs/banner.png' %})">
           <div class="container">
             <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
           </div>
@@ -174,8 +203,23 @@
 
         <!-- Bootstrap core JavaScript -->
         {% block javascript %}
-        <script src="{% static 'blog/js/bootstrap/bootstrap.js' %}"></script>
-        <script src="{% static 'blog/js/bootstrap/bootstrap.bundle.min.js' %}"></script>
+            {# AngularJS minified and Jquery   #}
+            <script src="{% static 'angular/angular.min.js' %}"></script>
+            <script src="{% static 'bootstrap/jquery.min.js' %}"></script>
+
+            {# Bootstrap  #}
+            <script src="{% static 'bootstrap/bootstrap.js' %}"></script>
+            <script src="{% static 'bootstrap/bootstrap.bundle.min.js' %}"></script>
+
+            {# ngResource, ui-router, and angular-sanitize  #}
+            <script src="{% static 'angular-resource/angular-resource.min.js' %}"></script>
+            <script src="{% static 'angular-ui-router/release/angular-ui-router.min.js' %}"></script>
+            <script src="{% static 'angular-sanitize/angular-sanitize.min.js' %}"></script>
+
+            <script src="{% static 'blog/js/blogApp/blogApp.js' %}"></script>
+            <script src="{% static 'blog/js/blogApp/components/default.controllers.js' %}"></script>
+
+{#        <script src="{% static 'blog/js/bootstrap/bootstrap.bundle.min.js' %}"></script>#}
         {% endblock javascript %}
     {% endblock body %}
   </body>
