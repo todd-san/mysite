@@ -28,8 +28,8 @@
         <!-- Navigation -->
         {% block navigation %}
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
-       style="background-image: url({% static 'blog/imgs/banner.png' %})">
-  <div class="container">
+             style="background-image: url({% static 'blog/imgs/banner.png' %})">
+            <div class="container">
     <a class="navbar-brand" href="#"><span style="color: #85a6d6">toddsan.com:</span> <small>A blog page for some old and new projects.</small></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -91,111 +91,64 @@
       </ul>
     </div>
   </div>
-</nav>
+        </nav>
         {% endblock navigation %}
 
         {% block content %}
+
         <!-- Page Content -->
         <div class="container">
           <div class="row">
-            <!-- Blog Entries Column -->
-            <div class="col-md-8" ui-view="threadView"></div>
-{#            <div class="col-md-8">#}
-{##}
-{#              <!-- Custom code for Blog Entries (Not yet usable)-->#}
-{#              {% block page_heading %}#}
-{#              <h1 class="my-4">Page Heading#}
-{#                <small>Secondary Text</small>#}
-{#              </h1>#}
-{#              {% endblock page_heading %}#}
-{#              <div class="card mb-4">#}
-{#                <img class="card-img-top" src="http://placehold.it/750x200" alt="Card image cap">#}
+
+            <!-- Main View Column-->
+            <div class="col-md-8">
+
+                <!-- Page State Title View-->
+                <div ui-view="pageTitleView"></div>
+                <!-- Thread View -->
+                <div ui-view="threadView"></div>
+                <!-- Pagination View-->
+                <div ui-view="paginationView"></div>
+            </div>
+
+            <!-- Sidebar Widgets -->
+            <div class="col-md-4">
+                <!-- Search Widget -->
+                <div ui-view="searchView"></div>
+                <!-- Categories Widget -->
+                <div ui-view="categoryView"></div>
+            </div>
+
+{#              <!-- Side Widget -->#}
+{#              {% block side_widget %}#}
+{#              <div class="card my-4">#}
+{#                <h5 class="card-header">Side Widget</h5>#}
 {#                <div class="card-body">#}
-{#                  <h2 class="card-title">Post Title</h2>#}
-{#                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>#}
-{#                  <a href="#" class="btn btn-primary">Read More &rarr;</a>#}
-{#                </div>#}
-{#                <div class="card-footer text-muted">#}
-{#                  Posted on January 1, 2017 by#}
-{#                  <a href="#">Start Bootstrap</a>#}
+{#                  You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!#}
 {#                </div>#}
 {#              </div>#}
-{#            </div>#}
+{#              {% endblock side_widget %}#}
 
-
-            <!-- Sidebar Widgets Column -->
-            <div class="col-md-4">
-              <!-- Search Widget -->
-              {% block search_widget %}
-              <div class="card my-4">
-                <h5 class="card-header">Search</h5>
-                <div class="card-body">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-secondary" type="button">Go!</button>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              {% endblock search_widget %}
-
-              <!-- Categories Widget -->
-              {% block categories_widget %}
-              <div class="card my-4">
-                <h5 class="card-header">Categories</h5>
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <ul class="list-unstyled mb-0">
-                        <li>
-                          <a href="#">Web Design</a>
-                        </li>
-                        <li>
-                          <a href="#">HTML</a>
-                        </li>
-                        <li>
-                          <a href="#">Freebies</a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="col-lg-6">
-                      <ul class="list-unstyled mb-0">
-                        <li>
-                          <a href="#">JavaScript</a>
-                        </li>
-                        <li>
-                          <a href="#">CSS</a>
-                        </li>
-                        <li>
-                          <a href="#">Tutorials</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {% endblock categories_widget %}
-
-              <!-- Side Widget -->
-              {% block side_widget %}
-              <div class="card my-4">
-                <h5 class="card-header">Side Widget</h5>
-                <div class="card-body">
-                  You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
-                </div>
-              </div>
-              {% endblock side_widget %}
-            </div>
           </div>
         </div>
         <!-- /.container -->
         {% endblock content %}
         {% block ui-templates %}
+         <script id="template/pageTitle-view.html" type="text/ng-template">
+            {% include 'blog/pageTitleView.html' %}
+        </script>
         <script id="template/thread-view.html" type="text/ng-template">
             {% include 'blog/threadView.html' %}
         </script>
-
+        <script id="template/search-view.html" type="text/ng-template">
+            {% include 'blog/searchView.html' %}
+        </script>
+        <script id="template/category-view.html" type="text/ng-template">
+            {% include 'blog/categoryView.html' %}
+        </script>
+        <script id="template/pagination-view.html" type="text/ng-template">
+            {% include 'blog/paginationView.html' %}
+        </script>
         {% endblock ui-templates %}
 
         <!-- Footer -->

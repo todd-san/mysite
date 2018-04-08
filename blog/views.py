@@ -23,6 +23,10 @@ class PostApiViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
+    def filter_queryset(self, queryset):
+        queryset = super(PostApiViewSet, self).filter_queryset(queryset)
+        return queryset.order_by('-date_modified')
+
 
 def index(request):
     """
