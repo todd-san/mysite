@@ -20,8 +20,16 @@
     {% endblock %}
   </head>
 
-  <body {% block ng_app %} ng-app="blogApp2"{% endblock %} {% block background_img %}
-      background="{% static 'blog/imgs/psychedelic-skull-wallpaper.png' %}"
+  <body id="body"{% block ng_app %} ng-app="blogApp2"{% endblock %} {% block background_img %}
+      background="{% static 'blog/imgs/psychedelic-skull-wallpaper.png' %}">
+      <script type="text/javascript">
+        var x_pos = Math.floor(Math.random()*80)+1;
+        {#var x_pos = 80;#}
+        var y_pos = Math.floor(Math.random()*80)+1;
+        var cssText = 'background-position-x: '+x_pos.toString()+'%; background-position-y: '+y_pos.toString()+'%;';
+        console.log(cssText);
+        document.getElementById('body').style.cssText = cssText;
+      </script>>
   {% endblock %}>
     {% block body %}
 

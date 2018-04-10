@@ -71,8 +71,8 @@ blogApp2
                 self.forwardOnePage = function(){
                     $state.go(
                         'thread',
-                        {page: (self.pageCurrent - 1).toString()},
-                        {reload: true}
+                        {page: (self.pageCurrent - 1).toString()}
+                        // {reload: true}
                     );
                 };
 
@@ -80,8 +80,8 @@ blogApp2
                     console.log('@backOnePage');
                     $state.go(
                         'thread',
-                        {page: (self.pageCurrent + 1).toString()},
-                        {reload: true}
+                        {page: (self.pageCurrent + 1).toString()}
+                        // {reload: true}
                     );
                 };
                 self.setInitialPagination();
