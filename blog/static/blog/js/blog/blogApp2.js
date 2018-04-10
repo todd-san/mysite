@@ -60,6 +60,41 @@ blogApp2.config(['$interpolateProvider', '$stateProvider', '$resourceProvider',
                     return Posts.query().$promise
                 }]
             }
+        })
+        .state('thread',{
+            url: '/?{page}',
+            views:{
+                'pageTitleView':{
+                    templateUrl: 'template/pageTitle-view.html',
+                    controller: 'pageTitleViewController',
+                    controllerAs: 'pageTitleCntrl'
+                },
+                'threadView': {
+                    templateUrl: 'template/thread-view.html',
+                    controller: "threadViewController",
+                    controllerAs: 'threadCntrl'
+                },
+                'searchView': {
+                    templateUrl: 'template/search-view.html',
+                    controller: 'searchViewController',
+                    controllerAs: 'searchCntrl'
+                },
+                'categoryView':{
+                    templateUrl: 'template/category-view.html',
+                    controller: "categoryViewController",
+                    controllerAs: 'categoryCntrl'
+                },
+                'paginationView':{
+                    templateUrl: 'template/pagination-view.html',
+                    controller: "paginationViewController",
+                    controllerAs: 'paginationCntrl'
+                }
+            },
+            resolve: {
+                posts: ['$transition$', 'Posts', function($transition$, Posts){
+                    return Posts.query({page:$transition$.params().page}).$promise
+                }]
+            }
         });
         $urlRouterProvider.otherwise('/');
     }]);

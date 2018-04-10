@@ -3,7 +3,7 @@
 blogApp2
 .factory('Posts', [
     '$resource', function($resource) {
-        return $resource('api/posts/:page', null, {
+        return $resource('api/posts/?{page}', {page:'@page'}, {
             query: {
                 method:'GET',
                 isArray: false,
