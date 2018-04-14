@@ -16,5 +16,16 @@ angular.module('blogApp')
         });
     }])
     .factory('Post', ['$resource', function($resource) {
-        return $resource('api/posts/:id/', {id:'@id'})
+        return $resource('api/posts/:id', {id:'@id'}, {
+            query: {
+                method:'GET',
+                isArray: false,
+                transformResponse: function(data, headersGetter) {
+                    return {
+                        data: angular.fromJson(data),
+                        headers: headersGetter()
+                    };
+                }
+            }
+        });
     }]);
