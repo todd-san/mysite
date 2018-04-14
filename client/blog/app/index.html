@@ -1,0 +1,123 @@
+{% load static %}
+<html lang="en">
+<head>
+    {% block title_outer %}
+        <title>{% block title %}{{ site.name }}{% endblock %}</title>
+    {% endblock %}
+
+    {% block meta %}
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
+    {% endblock %}
+
+    {% block stylesheets %}
+      <link href="{% static 'blog/css/bootstrap/bootstrap.min.css' %}" rel="stylesheet">
+      <!-- Custom styles for this template -->
+      <!--<link href="blog/css/blog-home.css" rel="stylesheet"> -->
+      <link href="{% static 'blog/css/blog-home.css' %}" rel="stylesheet">
+    {% endblock %}
+  </head>
+<body id="body" ng-app="blogApp" background="{% static 'blog\assets\images\psychedelic-skull-wallpaper.png'%}">
+
+<!-- NAVIGATION -->
+<ui-view name="navView"></ui-view>
+
+<!-- CONTENT -->
+<div class="container">
+    <div class="row" style="padding-top: 20px;">
+        <div ui-view="aboutView"></div>
+        <div ui-view="servicesView"></div>
+        <div ui-view="contactView"></div>
+        <div ui-view="loginView"></div>
+        <div ui-view="postView"></div>
+
+
+        <!-- Main View -->
+        <div class="col-md-8">
+            <div ui-view="headerView"></div>
+            <div ui-view="threadView"></div>
+            <div ui-view="paginationView"></div>
+        </div>
+
+        <!-- Sidebar Widgets -->
+        <div class="col-md-4">
+            <div ui-view="searchView"></div>
+            <div ui-view="categoryView"></div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+    </div>
+</footer>
+
+<!-- JAVASCRIPT -->
+{# CORE DEPENDENCIES #}
+<script src="{% static 'blog/node_modules/jquery/dist/jquery.min.js' %}"></script>
+<script src="{% static 'blog/node_modules/bootstrap/dist/js/bootstrap.bundle.js' %}"></script>
+<script src="{% static 'blog/node_modules/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'blog/node_modules/angular/angular.min.js' %}"></script>
+<script src="{% static 'blog/node_modules/angular-ui-router/release/angular-ui-router.min.js' %}"></script>
+<script src="{% static 'blog/node_modules/angular-resource/angular-resource.min.js' %}"></script>
+<script src="{% static 'blog/node_modules/angular-sanitize/angular-sanitize.min.js' %}"></script>
+
+{# THIRD PARTY PACKAGES #}
+
+{# APP INJECTION   #}
+<script src="{% static 'blog/app/app.module.js' %}"></script>
+<script src="{% static 'blog/app/app.config.js' %}"></script>
+<script src="{% static 'blog/app/app.routes.js' %}"></script>
+<script src="{% static 'blog/app/app.run.js' %}"></script>
+
+<!-- API -->
+<script src="{% static 'blog/app/api/api.services.js' %}"></script>
+
+<!-- CATEGORY -->
+<script src="{% static 'blog/app/category/category.controller.js' %}"></script>
+<script id="template/category-view.html" type="text/ng-template">
+    {% include 'blog/app/category/category.html' %}
+</script>
+
+<!-- HEADER -->
+<script src="{% static 'blog/app/header/header.controller.js' %}"></script>
+<script id="template/header-view.html" type="text/ng-template">
+    {% include 'blog/app/header/header.html' %}
+</script>
+
+<!-- NAV -->
+<script src="{% static 'blog/app/nav/nav.controller.js' %}"></script>
+<script id="template/nav-view.html" type="text/ng-template">
+    {% include 'blog/app/nav/nav.html' %}
+</script>
+
+<!-- PAGINATE -->
+<script src="{% static 'blog/app/paginate/paginate.controller.js' %}"></script>
+<script id="template/paginate-view.html" type="text/ng-template">
+    {% include 'blog/app/paginate/paginate.html' %}
+</script>
+
+<!-- POST -->
+<script src="{% static 'blog/app/post/post.controller.js' %}"></script>
+<script id="template/post-view.html" type="text/ng-template">
+    {% include 'blog/app/post/post.html' %}
+</script>
+
+<!-- SEARCH -->
+<script src="{% static 'blog/app/search/search.controller.js' %}"></script>
+<script id="template/search-view.html" type="text/ng-template">
+    {% include 'blog/app/search/search.html' %}
+</script>
+
+<!-- THREAD -->
+<script src="{% static 'blog/app/thread/thread.controller.js' %}"></script>
+<script id="template/thread-view.html" type="text/ng-template">
+    {% include 'blog/app/thread/thread.html' %}
+</script>
+
+</body>
+</html>

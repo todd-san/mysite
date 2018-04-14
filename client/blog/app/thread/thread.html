@@ -1,0 +1,15 @@
+<!-- Thread View -->
+<div>
+    <div ng-repeat="post in threadCntrl.posts">
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title"><$post.title$></h2>
+                <p class="card-text"><$post.abstract$></p>
+                <a href="#" class="btn btn-primary" ng-click="threadCntrl.goToPost(post);">Read More &rarr;</a>
+            </div>
+            <div class="card-footer text-muted">
+                Posted on <$post.date_modified$>
+            </div>
+        </div>
+    </div>
+</div>
