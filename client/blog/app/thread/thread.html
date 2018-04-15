@@ -8,7 +8,10 @@
                 <a href="#" class="btn btn-primary" ng-click="threadCntrl.goToPost(post);">Read More &rarr;</a>
             </div>
             <div class="card-footer text-muted">
-                Posted on <$post.date_modified$>
+                Posted on
+                <$post.date_modified | date: "mediumDate"$>
+{#                at#}
+{#                <$post.date_modified | date: "h:mma"$>#}
             </div>
         </div>
     </div>

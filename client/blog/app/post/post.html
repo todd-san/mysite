@@ -2,12 +2,20 @@
 <div class="card mb-12">
     <div class="card-body">
         <h2 class="card-title"><$postCntrl.post.title$></h2>
-        <p><small class="text-muted pull-right"><$postCntrl.post.date_modified$></small></p>
+        <p>
+            <small class="text-muted" style="text-align: right">
+                <$postCntrl.post.date_modified | date: "mediumDate"$> at
+                <$postCntrl.post.date_modified | date: "h:mma"$>
+            </small>
+        </p>
         <p class="card-text"><$postCntrl.post.abstract$></p>
         <p class="card-text"><$postCntrl.post.body$></p>
     </div>
     <div class="card-footer text-muted">
-        Posted on January 1, 2017 by
-        <a href="#">Start Bootstrap</a>
+        Posted on
+        <$postCntrl.post.date_modified | date: "mediumDate"$> at
+        <$postCntrl.post.date_modified | date: "h:mma"$>,
+        by
+        <a href="#">todd</a>
     </div>
 </div>

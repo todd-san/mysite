@@ -83,17 +83,12 @@ angular.module('blogApp')
                 }
             })
         .state('post',{
-                url: '/post/:{id}',
+                url: '/post/{id}',
                 views:{
                     'navView':{
                         templateUrl: 'template/nav-view.html',
                         controller: 'navViewController',
                         controllerAs: 'navCntrl'
-                    },
-                    'headerView':{
-                        templateUrl: 'template/header-view.html',
-                        controller: 'headerViewController',
-                        controllerAs: 'headerCntrl'
                     },
                     'postView':{
                         templateUrl: 'template/post-view.html',
