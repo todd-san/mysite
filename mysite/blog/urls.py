@@ -23,6 +23,7 @@ import blog.views
 router = routers.DefaultRouter()
 router.register(r'users', blog.views.UserApiViewSet)
 router.register(r'posts', blog.views.PostApiViewSet)
+router.register(r'aboutMe', blog.views.AboutMeApiViewSet)
 
 urlpatterns = [
     url(r'^$', blog.views.index, name="blog-index"),

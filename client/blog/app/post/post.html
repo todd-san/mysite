@@ -1,5 +1,5 @@
 <!-- Blog Post -->
-<div class="card mb-12">
+<div class="card" style="margin-top: 15px;">
     <div class="card-body">
         <h2 class="card-title"><$postCntrl.post.title$></h2>
         <p>
@@ -8,14 +8,21 @@
                 <$postCntrl.post.date_modified | date: "h:mma"$>
             </small>
         </p>
-        <p class="card-text"><$postCntrl.post.abstract$></p>
-        <p class="card-text"><$postCntrl.post.body$></p>
+        <div marked="postCntrl.post.abstract"></div>
+        <br>
+        <div marked="postCntrl.post.body"></div>
     </div>
     <div class="card-footer text-muted">
+
         Posted on
         <$postCntrl.post.date_modified | date: "mediumDate"$> at
         <$postCntrl.post.date_modified | date: "h:mma"$>,
         by
         <a href="#">todd</a>
+        <span class="pull-right" style="align-self: right">
+            <button class="btn btn-default" ng-click="postCntrl.goToEditPost()">
+                <span class="fa fa-pencil">&nbsp;EDIT</span>
+            </button>
+        </span>
     </div>
 </div>

@@ -6,8 +6,36 @@ angular.module('blogApp')
 
         $log.info('Called into postViewController');
         var self = this;
-        self.post = post.data;
+        self.post = post;
 
         console.log(self.post);
+
+        self.goToEditPost = function(){
+            $state.go(
+                'edit-post',
+                {id: self.post.id.toString()},
+                {reload: true}
+            )
+        };
+
+        self.cancelEdit = function(){
+            $state.go(
+                'post',
+                {id: self.post.id.toString()},
+                {reload: true}
+            )
+        };
+
+        self.updatePost = function(){
+            console.log('updating post with: ', self.post);
+            self.post.$save();
+
+            $state.go(
+                'post',
+                {id: self.post.id.toString()},
+                {reload: true}
+            );
+
+        }
     }
 ]);

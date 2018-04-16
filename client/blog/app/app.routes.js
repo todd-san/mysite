@@ -101,6 +101,46 @@ angular.module('blogApp')
                         return Post.query({id:$transition$.params().id}).$promise
                     }]
                 }
-            });
+            })
+        .state('edit-post',{
+                url: '/edit-post/{id}',
+                views:{
+                    'navView':{
+                        templateUrl: 'template/nav-view.html',
+                        controller: 'navViewController',
+                        controllerAs: 'navCntrl'
+                    },
+                    'postView':{
+                        templateUrl: 'template/edit-post-view.html',
+                        controller: "postViewController",
+                        controllerAs: 'postCntrl'
+                    }
+                },
+                resolve: {
+                    post: ['$transition$', 'Post', function($transition$, Post){
+                        return Post.query({id:$transition$.params().id}).$promise
+                    }]
+                }
+    })
+        .state('about',{
+                url: '/about/',
+                views:{
+                    'navView':{
+                        templateUrl: 'template/nav-view.html',
+                        controller: 'navViewController',
+                        controllerAs: 'navCntrl'
+                    },
+                    'aboutView':{
+                        templateUrl: 'template/about-view.html',
+                        controller: "aboutViewController",
+                        controllerAs: 'aboutCntrl'
+                    }
+                },
+                resolve: {
+                    about: ['$transition$', 'About', function($transition$, About){
+                        return About.query().$promise
+                    }]
+                }
+        });
 
     }]);

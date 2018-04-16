@@ -1,6 +1,6 @@
 angular.module('blogApp')
-    .config(['$interpolateProvider', '$resourceProvider', '$httpProvider',
-        function($interpolateProvider, $resourceProvider, $httpProvider) {
+    .config(['$interpolateProvider', '$resourceProvider', '$httpProvider', 'markedProvider',
+        function($interpolateProvider, $resourceProvider, $httpProvider, markedProvider) {
 
             // add csrf tokens to all communications
             $httpProvider.defaults.xsrfCookieName = 'csrftoken';
@@ -13,6 +13,19 @@ angular.module('blogApp')
             // Fix the trailing slashes issue
             $resourceProvider.defaults.stripTrailingSlashes = false;
 
+            markedProvider.setOptions({
+                gfm: true,
+                tables: true,
+                highlight: function(code, lang){
+                    if (lang){
+                        return hljs.highlight(lang, code, true).value;
+                    } else {
+                        return hljs.highlightAuto(code).value;
+                    }
+                }
+            })
+
+            // markedProvider.setOptions({gfm: true});
 
         }]
     );

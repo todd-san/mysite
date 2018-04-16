@@ -15,8 +15,12 @@ angular.module('blogApp')
             }
         });
     }])
-    .factory('Post', ['$resource', function($resource) {
-        return $resource('api/posts/:id', {id:'@id'}, {
+    .factory('Post', ['ExtResource', function($resource) {
+        return $resource('api/posts/:id/', {id:'@id'}, {query: {isArray: false}});
+    }])
+    .factory('About', ['$resource',
+        function($resource) {
+        return $resource('api/aboutMe/', {
             query: {
                 method:'GET',
                 isArray: false,

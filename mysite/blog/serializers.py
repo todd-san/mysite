@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from .models import Post
+from .models import Post, AboutMe
 from rest_framework import routers, serializers, viewsets
 
 
@@ -23,4 +23,17 @@ class PostSerializer(serializers.HyperlinkedModelSerializer):
             'body',
             'category',
             'tags',
+        )
+
+
+# Serializers define the API representation.
+class AboutMeSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = AboutMe
+        fields = (
+            'id',
+            'title',
+            'date_created',
+            'date_modified',
+            'body',
         )

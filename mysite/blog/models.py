@@ -36,3 +36,25 @@ class Post (models.Model):
 
     def __str__(self):
         return self.title
+
+
+class AboutMe(models.Model):
+    title = 'About Me'
+    date_created = models.DateTimeField(auto_now_add=True)
+    date_modified = models.DateTimeField(auto_now=True)
+
+    body = models.TextField(default='', blank=True, null=True)
+
+    class Meta:
+        verbose_name = 'About Me'
+        verbose_name_plural = 'About Me'
+
+    @property
+    def epoch_modified(self):
+        return time_fmt(self.date_modified, 'U')
+
+    def __str__(self):
+        return self.title
+
+
+
