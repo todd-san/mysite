@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from .serializers import UserSerializer, PostSerializer, AboutMeSerializer
-from .models import Post, AboutMe
+from .serializers import UserSerializer, PostSerializer, AboutMeSerializer, ContactSerializer, ServiceSerializer, \
+    ProjectSerializer
+from .models import Post, AboutMe, Contact, Service, Project
 from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
-# Create your views here.
 
 
 # ViewSets define the view behavior.
@@ -15,7 +15,6 @@ class UserApiViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
 
 
-# ViewSets define the view behavior.
 class PostApiViewSet(viewsets.ModelViewSet):
     """
     API ViewSet for Blog Posts.
@@ -28,7 +27,6 @@ class PostApiViewSet(viewsets.ModelViewSet):
         return queryset.order_by('-date_modified')
 
 
-# ViewSets define the view behavior.
 class AboutMeApiViewSet(viewsets.ModelViewSet):
     """
     API ViewSet for Blog Posts.
@@ -37,8 +35,19 @@ class AboutMeApiViewSet(viewsets.ModelViewSet):
     serializer_class = AboutMeSerializer
 
 
+class ServiceApiViewSet(viewsets.ModelViewSet):
+    queryset = Service.objects.all()
+    serializer_class = ServiceSerializer
 
 
+class ContactApiViewSet(viewsets.ModelViewSet):
+    queryset = Contact.objects.all()
+    serializer_class = ContactSerializer
+
+
+class ProjectApiViewSet(viewsets.ModelViewSet):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
 
 
 def index(request):

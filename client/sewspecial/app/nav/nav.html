@@ -1,0 +1,46 @@
+{% load static %}
+<!-- Nav View -->
+{#<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top navbar-custom" style="background-color: #656566">#}
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top navbar-custom">
+{#     style="background-image: url({% static 'blog/imgs/banner.png' %})">#}
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img height="70" src="{% static 'sewspecial/assets/images/machine.jpg' %}">
+            <img height="70" src="{% static 'sewspecial/assets/images/banner.jpg' %}">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item :active">
+                    <a class="nav-link" href="#"
+                       style="font-family: 'Open Sans Condensed', sans-serif;
+                              font-size: 35px;">HOME
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="cursor: pointer;">
+                    <a class="nav-link" style="font-family: 'Open Sans Condensed', sans-serif;
+                              font-size: 35px;" ng-click="navCntrl.goToAboutMe()">SERVICES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="font-family: 'Open Sans Condensed', sans-serif;
+                              font-size: 35px;" href="#">CLASSES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="font-family: 'Open Sans Condensed', sans-serif;
+                              font-size: 35px;" href="#">CALENDAR</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="font-family: 'Open Sans Condensed', sans-serif;
+                              font-size: 35px;" href="#">GOT IQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="font-family: 'Open Sans Condensed', sans-serif;
+                              font-size: 35px;" href="#">MORE</a>
+                </li>
+            </ul>
+        </div>
+  </div>
+</nav>

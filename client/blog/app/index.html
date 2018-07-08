@@ -27,15 +27,17 @@
         <link href="{% static 'blog/assets/css/blog-home.css' %}" rel="stylesheet">
     {% endblock %}
   </head>
-<body id="body" ng-app="blogApp" background="{% static 'blog\assets\images\psychedelic-skull-wallpaper.png'%}">
+{#<body id="body" ng-app="blogApp" background="{% static 'blog\assets\images\psychedelic-skull-wallpaper.png'%}">#}
+<body id="body" ng-app="blogApp">
 
 <!-- NAVIGATION -->
 <ui-view name="navView"></ui-view>
 
 <!-- CONTENT -->
-<div class="container">
+<div class="container" style="margin-top: 50px;">
 
         <div ui-view="aboutView"></div>
+        <div ui-view="projectsView"></div>
 
         <div ui-view="servicesView"></div>
         <div ui-view="contactView"></div>
@@ -47,11 +49,11 @@
         <div class="col-md-8">
             <div ui-view="headerView"></div>
             <div ui-view="threadView"></div>
-            <div ui-view="paginationView"></div>
+            <div ui-view="paginateView"></div>
         </div>
 
         <!-- Sidebar Widgets -->
-        <div class="col-md-4">
+        <div class="col-md-4" style="margin-top: -25px;">
             <div ui-view="searchView"></div>
             <div ui-view="categoryView"></div>
         </div>
@@ -143,6 +145,13 @@
 <script id="template/thread-view.html" type="text/ng-template">
     {% include 'blog/app/thread/thread.html' %}
 </script>
+
+<!-- PROJECTS -->
+<script src="{% static 'blog/app/projects/projects.controller.js' %}"></script>
+<script id="template/projects-view.html" type="text/ng-template">
+    {% include 'blog/app/projects/projects.html' %}
+</script>
+
 
 </body>
 </html>

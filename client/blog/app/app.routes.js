@@ -15,11 +15,6 @@ angular.module('blogApp')
                         controller: 'navViewController',
                         controllerAs: 'navCntrl'
                     },
-                    'headerView':{
-                        templateUrl: 'template/header-view.html',
-                        controller: 'headerViewController',
-                        controllerAs: 'pageTitleCntrl'
-                    },
                     'threadView': {
                         templateUrl: 'template/thread-view.html',
                         controller: "threadViewController",
@@ -37,8 +32,8 @@ angular.module('blogApp')
                     },
                     'paginateView':{
                         templateUrl: 'template/paginate-view.html',
-                        controller: "paginationViewController",
-                        controllerAs: 'paginationCntrl'
+                        controller: "paginateViewController",
+                        controllerAs: 'paginateCntrl'
                     }
                 },
                 resolve: {
@@ -50,11 +45,16 @@ angular.module('blogApp')
         .state('thread',{
                 url: '/?{page}',
                 views:{
-                    'headerView':{
-                        templateUrl: 'template/header-view.html',
-                        controller: 'headerViewController',
-                        controllerAs: 'pageTitleCntrl'
+                    'navView':{
+                        templateUrl: 'template/nav-view.html',
+                        controller: 'navViewController',
+                        controllerAs: 'navCntrl'
                     },
+                    // 'headerView':{
+                    //     templateUrl: 'template/header-view.html',
+                    //     controller: 'headerViewController',
+                    //     controllerAs: 'pageTitleCntrl'
+                    // },
                     'threadView': {
                         templateUrl: 'template/thread-view.html',
                         controller: "threadViewController",
@@ -70,10 +70,10 @@ angular.module('blogApp')
                         controller: "categoryViewController",
                         controllerAs: 'categoryCntrl'
                     },
-                    'paginationView':{
+                    'paginateView':{
                         templateUrl: 'template/paginate-view.html',
                         controller: "paginateViewController",
-                        controllerAs: 'paginationCntrl'
+                        controllerAs: 'paginateCntrl'
                     }
                 },
                 resolve: {
@@ -139,6 +139,26 @@ angular.module('blogApp')
                 resolve: {
                     about: ['$transition$', 'About', function($transition$, About){
                         return About.query().$promise
+                    }]
+                }
+        })
+        .state('projects',{
+                url: '/projects/',
+                views:{
+                    'navView':{
+                        templateUrl: 'template/nav-view.html',
+                        controller: 'navViewController',
+                        controllerAs: 'navCntrl'
+                    },
+                    'projectsView':{
+                        templateUrl: 'template/projects-view.html',
+                        controller: "projectViewController",
+                        controllerAs: 'prjCntrl'
+                    }
+                },
+                resolve: {
+                    projects: ['$transition$', 'Projects', function($transition$, Projects){
+                        return Projects.query().$promise
                     }]
                 }
         });

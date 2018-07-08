@@ -1,0 +1,59 @@
+/*!
+ * Start Bootstrap - Blog Home (https://startbootstrap.com/template-overviews/blog-home)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-blog-home/blob/master/LICENSE)
+ */
+
+body {
+  padding-top: 54px;
+  height: 100%;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
+   /*background:#6cf;*/
+}
+
+pre {
+
+    border-radius: 4px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 1px 0px inset;
+    color: rgb(51, 51, 51);
+    min-height: 20px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    border: 1px solid #e3e3e3;
+    background-color: #f5f5f5;
+}
+.navbar-custom {
+    background-color: #656566;
+}
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: rgba(255,255,255,.8);
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: rgba(255,255,255,.5);
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #dc7f54;
+}
+
+.footer-custom {
+    background-color: #656566;
+}

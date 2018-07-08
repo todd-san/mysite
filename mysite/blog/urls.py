@@ -24,6 +24,9 @@ router = routers.DefaultRouter()
 router.register(r'users', blog.views.UserApiViewSet)
 router.register(r'posts', blog.views.PostApiViewSet)
 router.register(r'aboutMe', blog.views.AboutMeApiViewSet)
+router.register(r'contact', blog.views.ContactApiViewSet)
+router.register(r'services', blog.views.ServiceApiViewSet)
+router.register(r'projects', blog.views.ProjectApiViewSet)
 
 urlpatterns = [
     url(r'^$', blog.views.index, name="blog-index"),

@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from .models import Post, AboutMe
+from .models import Post, AboutMe, Service, Contact, Project
 from rest_framework import routers, serializers, viewsets
 
 
@@ -16,6 +16,7 @@ class PostSerializer(serializers.HyperlinkedModelSerializer):
         model = Post
         fields = (
             'id',
+            'url', 
             'title',
             'abstract',
             'date_created',
@@ -32,8 +33,52 @@ class AboutMeSerializer(serializers.HyperlinkedModelSerializer):
         model = AboutMe
         fields = (
             'id',
+            'url',
             'title',
             'date_created',
             'date_modified',
             'body',
+        )
+
+
+class ServiceSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Service
+        fields = (
+            'id',
+            'url',
+            'title',
+            'description',
+        )
+
+
+class ContactSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Contact
+        fields = (
+            'id',
+            'url',
+            'address',
+            'phone_number',
+            'email',
+
+            'twitter',
+            'linkedin',
+            'github',
+            'bitbucket',
+        )
+
+
+class ProjectSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Project
+        fields = (
+            'id',
+            'url',
+            'name',
+            'description',
+            'link',
+            'image',
+            'date_created',
+            'date_modified',
         )

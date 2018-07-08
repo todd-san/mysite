@@ -4,31 +4,60 @@
 {#     style="background-image: url({% static 'blog/imgs/banner.png' %})">#}
     <div class="container">
         <a class="navbar-brand" href="#">
-            <span style="color: #85a6d6">toddsan.com</span>
+            <span style="color: #b6b6b6; font-size: 45px;"><strong>todd</strong>miller</span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
+                <li class="nav-item" id="nav_home">
                     <a class="nav-link" href="#">Home
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
-                <li class="nav-item" style="cursor: pointer;">
+                <li class="nav-item" id="nav_about" style="cursor: pointer;">
                     <a class="nav-link" ng-click="navCntrl.goToAboutMe()">About</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" id="nav_services">
                     <a class="nav-link" href="#">Services</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" id="nav_contact">
                     <a class="nav-link" href="#">Contact</a>
                 </li>
-                <li class="dropdown">
+                <li class="dropdown" id="nav_projects">
+                    <a class="nav-link" ng-click="navCntrl.goToProjects()">Projects</a>
+                </li>
+                <li class="dropdown" id="nav_login">
                     <a class="nav-link" href="#">Login</a>
                 </li>
             </ul>
         </div>
   </div>
 </nav>
+{#<header id="masthead" class="site-header" role="banner">#}
+{##}
+{#		<div class="custom-header" style="margin-bottom: 0px;">#}
+{##}
+{#		<div class="custom-header-media">#}
+{#					</div>#}
+{##}
+{#	<div class="site-branding" style="margin-bottom: 0px;">#}
+{#	<div class="wrap">#}
+{##}
+{##}
+{#		<div class="site-branding-text">#}
+{#							<h1 class="site-title"><a href="https://doughellmann.com/blog/" rel="home">Doug Hellmann</a></h1>#}
+{##}
+{#							<p class="site-description">Python, OpenStack, and Open Source</p>#}
+{#					</div><!-- .site-branding-text -->#}
+{##}
+{#				<a href="#content" class="menu-scroll-down"><svg class="icon icon-arrow-right" aria-hidden="true" role="img"> <use href="#icon-arrow-right" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right"></use> </svg><span class="screen-reader-text">Scroll down to content</span></a>#}
+{##}
+{#	</div><!-- .wrap -->#}
+{#</div><!-- .site-branding -->#}
+{##}
+{#</div><!-- .custom-header -->#}
+{##}
+{##}
+{#	</header>#}

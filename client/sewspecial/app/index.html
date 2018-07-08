@@ -1,0 +1,192 @@
+{% load static %}
+<html lang="en">
+<head>
+    {% block title_outer %}
+        <title>{% block title %}{{ site.name }}{% endblock %}</title>
+    {% endblock %}
+
+    {% block meta %}
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
+    {% endblock %}
+
+    {% block stylesheets %}
+        <link href="{% static 'blog/node_modules/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'blog/node_modules/bootstrap/dist/css/bootstrap-grid.css' %}" rel="stylesheet">
+        <link href="{% static 'blog/node_modules/bootstrap/dist/css/bootstrap-reboot.css' %}" rel="stylesheet">
+
+        <!-- CDN I need to download -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/styles/github.min.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+
+
+        <link href="{% static 'blog/node_modules/bootstrap-markdown/css/bootstrap-markdown.min.css' %}" rel="stylesheet">
+        <link href="{% static 'blog/node_modules/angular-markdown-editor/styles/angular-markdown-editor.css' %}" rel="stylesheet">
+        <!-- Bootstrap core CSS -->
+        <link href="{% static 'sewspecial/assets/css/bootstrap.min.css' %}" rel="stylesheet">
+        <!-- Material Design Bootstrap -->
+        <link href="{% static 'sewspecial/assets/css/mdb.min.css' %}" rel="stylesheet">
+        <!-- Your custom styles (optional) -->
+        <link href="{% static 'sewspecial/assets/css/style.min.css' %}" rel="stylesheet">
+        <style type="text/css">
+
+          html,
+          body,
+          header,
+          .carousel {
+            height: 60vh;
+          }
+
+          @media (max-width: 740px) {
+            html,
+            body,
+            header,
+            .carousel {
+              height: 100vh;
+            }
+          }
+
+          @media (min-width: 800px) and (max-width: 850px) {
+            html,
+            body,
+            header,
+            .carousel {
+              height: 100vh;
+            }
+          }
+
+          @media (min-width: 800px) and (max-width: 850px) {
+                  .navbar:not(.top-nav-collapse) {
+                      background: #1C2331!important;
+                  }
+              }
+        </style>
+        <!-- Custom styles for this template -->
+        <link href="{% static 'sewspecial/assets/css/sew_special.css' %}" rel="stylesheet">
+    {% endblock %}
+  </head>
+{#<body id="body" ng-app="blogApp" background="{% static 'blog\assets\images\psychedelic-skull-wallpaper.png'%}">#}
+<body id="body" ng-app="sewSpecialApp">
+
+<!-- NAVIGATION -->
+<ui-view name="navView"></ui-view>
+<div ui-view="carouselView"></div>
+
+<!-- CONTENT -->
+<div class="container" style="margin-top: 50px;">
+
+{#        <div ui-view="carouselView"></div>#}
+{##}
+{#        <div ui-view="servicesView"></div>#}
+{#        <div ui-view="contactView"></div>#}
+{#        <div ui-view="loginView"></div>#}
+{#        <div ui-view="postView"></div>#}
+
+    <div class="row" style="padding-top: 20px;">
+        <!-- Main View -->
+{#        <div class="col-md-8">#}
+{#            <div ui-view="headerView"></div>#}
+{#            <div ui-view="threadView"></div>#}
+{#            <div ui-view="paginateView"></div>#}
+{#        </div>#}
+
+        <!-- Sidebar Widgets -->
+{#        <div class="col-md-4" style="margin-top: -25px;">#}
+{#            <div ui-view="searchView"></div>#}
+{#            <div ui-view="categoryView"></div>#}
+{#        </div>#}
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="py-5 footer-custom" style="margin-top: 25px;">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+    </div>
+</footer>
+
+<!-- JAVASCRIPT -->
+{# CORE DEPENDENCIES #}
+<script src="{% static 'sewspecial/node_modules/jquery/dist/jquery.min.js' %}"></script>
+<script src="{% static 'sewspecial/node_modules/bootstrap/dist/js/bootstrap.bundle.js' %}"></script>
+<script src="{% static 'sewspecial/node_modules/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'sewspecial/node_modules/angular/angular.min.js' %}"></script>
+<script src="{% static 'sewspecial/node_modules/angular-ui-router/release/angular-ui-router.min.js' %}"></script>
+<script src="{% static 'sewspecial/node_modules/angular-resource/angular-resource.min.js' %}"></script>
+<script src="{% static 'sewspecial/node_modules/angular-sanitize/angular-sanitize.min.js' %}"></script>
+<script src="{% static 'sewspecial/node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js' %}"></script>
+
+{# THIRD PARTY PACKAGES #}
+<script src="{% static 'sewspecial/node_modules/marked/lib/marked.js' %}"></script>
+<script src="{% static 'sewspecial/node_modules/angular-marked/dist/angular-marked.js' %}"></script>
+<script src="{% static 'sewspecial/node_modules/highlight.js/lib/highlight.js' %}"></script>
+<script src="{% static 'sewspecial/node_modules/highlightjs/highlight.pack.js' %}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+{# APP INJECTION   #}
+<script src="{% static 'sewspecial/app/app.module.js' %}"></script>
+<script src="{% static 'sewspecial/app/app.config.js' %}"></script>
+<script src="{% static 'sewspecial/app/app.routes.js' %}"></script>
+<script src="{% static 'sewspecial/app/app.run.js' %}"></script>
+
+<!-- API -->
+<script src="{% static 'sewspecial/app/api/api.services.js' %}"></script>
+<script src="{% static 'sewspecial/app/api/ext_resource.factory.js' %}"></script>
+
+{#<!-- ABOUT-->#}
+{#<script src="{% static 'blog/app/aboutMe/about.controller.js' %}"></script>#}
+{#<script id="template/about-view.html" type="text/ng-template">#}
+{#    {% include 'blog/app/aboutMe/about.html' %}#}
+{#</script>#}
+
+{#<!-- CATEGORY -->#}
+{#<script src="{% static 'blog/app/category/category.controller.js' %}"></script>#}
+{#<script id="template/category-view.html" type="text/ng-template">#}
+{#    {% include 'blog/app/category/category.html' %}#}
+{#</script>#}
+
+<!-- CAROUSEL -->
+<script src="{% static 'sewspecial/app/carousel/carousel.controller.js' %}"></script>
+<script id="template/carousel-view.html" type="text/ng-template">
+    {% include 'sewspecial/app/carousel/carousel.html' %}
+</script>
+
+<!-- NAV -->
+<script src="{% static 'sewspecial/app/nav/nav.controller.js' %}"></script>
+<script id="template/nav-view.html" type="text/ng-template">
+    {% include 'sewspecial/app/nav/nav.html' %}
+</script>
+
+{#<!-- PAGINATE -->#}
+{#<script src="{% static 'blog/app/paginate/paginate.controller.js' %}"></script>#}
+{#<script id="template/paginate-view.html" type="text/ng-template">#}
+{#    {% include 'blog/app/paginate/paginate.html' %}#}
+{#</script>#}
+
+{#<!-- POST -->#}
+{#<script src="{% static 'blog/app/post/post.controller.js' %}"></script>#}
+{#<script id="template/post-view.html" type="text/ng-template">#}
+{#    {% include 'blog/app/post/post.html' %}#}
+{#</script>#}
+{#<script id="template/edit-post-view.html" type="text/ng-template">#}
+{#    {% include 'blog/app/post/edit-post.html' %}#}
+{#</script>#}
+
+{#<!-- SEARCH -->#}
+{#<script src="{% static 'blog/app/search/search.controller.js' %}"></script>#}
+{#<script id="template/search-view.html" type="text/ng-template">#}
+{#    {% include 'blog/app/search/search.html' %}#}
+{#</script>#}
+
+<!-- THREAD -->
+<script src="{% static 'sewspecial/app/thread/thread.controller.js' %}"></script>
+<script id="template/thread-view.html" type="text/ng-template">
+    {% include 'sewspecial/app/thread/thread.html' %}
+</script>
+
+</body>
+</html>

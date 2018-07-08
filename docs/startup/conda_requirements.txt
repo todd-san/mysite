@@ -1,0 +1,17 @@
+# packages in environment at C:\conda3\envs\env_mysite:
+#
+# Name                    Version                   Build  Channel
+certifi                   2016.2.28                py36_0  
+django                    1.11.3                   py36_0  
+django-rest-framework     0.1.0                     <pip>
+djangorestframework       3.7.3                     <pip>
+olefile                   0.44                      <pip>
+Pillow                    4.3.0                     <pip>
+pip                       9.0.1                    py36_1  
+python                    3.6.2                         0  
+pytz                      2017.2                   py36_0  
+setuptools                36.4.0                   py36_1  
+vc                        14                            0  
+vs2015_runtime            14.0.25420                    0  
+wheel                     0.29.0                   py36_0  
+wincertstore              0.2                      py36_0  

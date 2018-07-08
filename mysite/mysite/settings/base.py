@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 PROJECT_APPS = [
     'blog',
+    'mtg_catalog',
 ]
 PREREQ_APPS = [
     'django.contrib.admin',
