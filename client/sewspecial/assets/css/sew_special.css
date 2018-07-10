@@ -51,9 +51,31 @@ pre {
 /* change the color of active or hovered links */
 .navbar-custom .nav-item.active .nav-link,
 .navbar-custom .nav-item:hover .nav-link {
-    color: #dc7f54;
+    color: #f57c00;
+    font-weight: bold;
 }
 
 .footer-custom {
     background-color: #656566;
+}
+
+input::placeholder{
+    color: #f57c00;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 25px;
+}
+input:placeholder-shown{
+    color: #f57c00;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 25px;
+}
+::placeholder{
+    color: #f57c00;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 25px;
+}
+.input{
+    color: #f57c00;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 25px;
 }

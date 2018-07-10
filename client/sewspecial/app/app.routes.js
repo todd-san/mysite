@@ -19,12 +19,12 @@ angular.module('sewSpecialApp')
                         templateUrl: 'template/carousel-view.html',
                         controller: "carouselViewController",
                         controllerAs: 'carouselCntrl'
+                    },
+                    'threadView': {
+                        templateUrl: 'template/thread-view.html',
+                        controller: 'threadViewController',
+                        controllerAs: 'threadCntrl'
                     }
-                    // 'searchView': {
-                    //     templateUrl: 'template/search-view.html',
-                    //     controller: 'searchViewController',
-                    //     controllerAs: 'searchCntrl'
-                    // },
                     // 'categoryView':{
                     //     templateUrl: 'template/category-view.html',
                     //     controller: "categoryViewController",

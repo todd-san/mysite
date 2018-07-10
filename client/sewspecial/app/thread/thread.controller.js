@@ -2,7 +2,7 @@ angular.module('sewSpecialApp')
     .controller('threadViewController',
         ['$state','posts',
             function($state, posts){
-        // $log.info('Called into threadViewController');
+        $log.info('Called into threadViewController');
         var self = this;
         self.posts = posts.data;
         self.headers = posts.headers;

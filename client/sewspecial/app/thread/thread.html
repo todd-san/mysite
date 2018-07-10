@@ -1,21 +1,182 @@
 <!-- Thread View -->
-<div>
-    <div ng-repeat="post in threadCntrl.posts">
-        <div class="card mb-4">
-            <div class="card-body">
-                <p class="text-muted">
-                    <$post.date_modified | date: "yyyy-MM-dd"$>
-                </p>
-                <h2 class="card-title" style="margin-top: -15px;"><$post.title$></h2>
-                <p class="card-text text-muted"><$post.abstract$></p>
-                <span style="cursor: pointer;" ng-click="threadCntrl.goToPost(post);">Read More...</span>
-            </div>
+{#<div>#}
+{#    <div ng-repeat="post in threadCntrl.posts">#}
+{#        <div class="card mb-4">#}
+{#            <div class="card-body">#}
+{#                <p class="text-muted">#}
+{#                    <$post.date_modified | date: "yyyy-MM-dd"$>#}
+{#                </p>#}
+{#                <h2 class="card-title" style="margin-top: -15px;"><$post.title$></h2>#}
+{#                <p class="card-text text-muted"><$post.abstract$></p>#}
+{#                <span style="cursor: pointer;" ng-click="threadCntrl.goToPost(post);">Read More...</span>#}
+{#            </div>#}
 {#            <div class="card-footer text-muted">#}
 {#                Posted on#}
 {#                <$post.date_modified | date: "mediumDate"$>#}
 {#                at#}
 {#                <$post.date_modified | date: "h:mma"$>#}
 {#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+ <!--Main layout-->
+{% load static %}
+<link href="{% static 'sewspecial/assets/css/sew_special.css' %}" rel="stylesheet">
+  <main>
+    <div class="container">
+
+      <section class="mt-5 wow fadeIn">
+        <div class="row">
+          <div class="col-md-4 col-xl-4 mb-4">
+            <div class="card">
+              <div class="card-body" style="background-color:#b2b2b4">
+
+                <!-- Form -->
+                <form name="">
+                  <!-- Heading -->
+                  <h3 class="text-center"
+                      style="font-family: 'Open Sans Condensed', sans-serif; font-size:35px; color:#000000;
+                       font-weight: bold;">
+                    Subscribe To The Newsletter:
+                  </h3>
+                  <hr>
+
+                  <div class="md-form">
+                    <i class="fa fa-user prefix white-text"></i>
+                    <input type="text" id="form3" class="form-control" placeholder="First Name"
+                    style="color: #000000;
+                           font-family: 'Open Sans Condensed', sans-serif;font-size: 25px;" >
+                  </div>
+                  <div class="md-form" style="color: #f57c00">
+                    <i class="fa fa-user prefix white-text"></i>
+                    <input type="text" id="form3" class="form-control"
+                           style="color: #000000;
+                           font-family: 'Open Sans Condensed', sans-serif;font-size: 25px;"  placeholder="Last Name">
+{#                    <label for="form3" placeholder="Last Name"></label>#}
+                  </div>
+                  <div class="md-form" style="color: #f57c00; border-bottom-color: #f57c00">
+                    <i class="fa fa-envelope prefix" style="color: whitesmoke;"></i>
+                    <input type="text" id="form2" class="form-control" placeholder="Your Email"
+                           style="color: #000000;
+                           font-family: 'Open Sans Condensed', sans-serif;font-size: 25px;" >
+                  </div>
+                  <div class="text-center">
+                    <button class="btn btn-orange">Subscribe</button>
+                  </div>
+
+                </form>
+                <!-- Form -->
+
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-8 mb-8">
+            <h3 class="h3 mb-3" style="font-family: 'Open Sans Condensed', sans-serif; font-size:35px;">
+                <i class="fa fa-pencil grey-text"></i> &nbsp;
+                Why Its a Great Time to Subscribe!</h3>
+            <p>The <span style="font-weight:bold">Sew Special</span> Newsletter is the best way to keep up-to-date on new blog-posts,
+                video tutorials, classes and other quilting news. </p>
+            <p>Read details below to learn more about MDB.</p>
+
+            <hr>
+
+            <div class="row">
+              <div class="col-1 mr-3">
+                <i class="fa fa-sticky-note fa-2x blue-text"></i>
+              </div>
+              <div class="col-10">
+                <h5 class="feature-title" style="font-family: 'Open Sans Condensed', sans-serif; font-size:25px;">
+                    Latest Blog Posts!
+                </h5>
+                <p class="grey-text">We give you detailed user-friendly documentation at your disposal. It will help you to implement your ideas
+                  easily.
+                </p>
+              </div>
+            </div>
+            <div style="height:30px"></div>
+
+            <div class="row">
+              <div class="col-1 mr-3">
+                <i class="fa fa-list fa-2x" style="color: darkmagenta"></i>
+              </div>
+              <div class="col-10">
+                <h5 class="feature-title" style="font-family: 'Open Sans Condensed', sans-serif; font-size:25px;">
+                    List of Services!
+                </h5>
+                <p class="grey-text">We give you detailed user-friendly documentation at your disposal. It will help you to implement your ideas
+                  easily.
+                </p>
+              </div>
+            </div>
+            <div style="height:30px"></div>
+            <!-- CTA -->
+{#            <a target="_blank" href="https://mdbootstrap.com/getting-started/" class="btn btn-grey btn-md">Download#}
+{#              <i class="fa fa-download ml-1"></i>#}
+{#            </a>#}
+{#            <a target="_blank" href="https://mdbootstrap.com/components/" class="btn btn-grey btn-md">Live demo#}
+{#              <i class="fa fa-image ml-1"></i>#}
+{#            </a>#}
+
+          </div>
+          <!--Grid column-->
+
         </div>
+        <!--Grid row-->
+
+      </section>
+      <!--Section: Main info-->
+
+      <hr class="my-5">
+
+      <!--Section: Main features & Quick Start-->
+      <section>
+        <h3 class="h3 text-center mb-5">About MDB</h3>
+        <div class="row wow fadeIn">
+          <div class="col-lg-6 col-md-12 px-4">
+            <div class="row">
+              <div class="col-1 mr-3">
+                <i class="fa fa-calendar fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h5 class="feature-title" style="font-family: 'Open Sans Condensed', sans-serif; font-size:25px;">Upcoming Events</h5>
+                <p class="grey-text">Thanks to MDB you can take advantage of all feature of newest Bootstrap 4.</p>
+              </div>
+            </div>
+            <div style="height:30px"></div>
+            <div class="row">
+              <div class="col-1 mr-3">
+                <i class="fa fa-book fa-2x orange-text"></i>
+              </div>
+              <div class="col-10">
+                <h5 class="feature-title" style="font-family: 'Open Sans Condensed', sans-serif; font-size:25px;">Got IQ Book Purchase</h5>
+                <p class="grey-text">We give you detailed user-friendly documentation at your disposal. It will help you to implement your ideas
+                  easily.
+                </p>
+              </div>
+            </div>
+            <div style="height:30px"></div>
+
+            <!--Third row-->
+            <div class="row">
+              <div class="col-1 mr-3">
+                <i class="fa fa-graduation-cap fa-2x cyan-text"></i>
+              </div>
+              <div class="col-10">
+                <h5 class="feature-title" style="font-family: 'Open Sans Condensed', sans-serif; font-size:25px;">Future Classes</h5>
+                <p class="grey-text">We care about the development of our users. We have prepared numerous tutorials, which allow you to learn
+                  how to use MDB as well as other technologies.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <p class="h5 text-center mb-4">Watch our "5 min Quick Start" tutorial</p>
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cXTThxoywNQ" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-</div>
+  </main>
